@@ -1,0 +1,38 @@
+:root {
+--text: #f5f7f9;
+--background: #090c10;
+--primary: #001236;
+--secondary: #080a0d;
+--accent: #abb7ce;
+}
+
+body{
+    background-color: var(--background);
+    padding: 60px;
+}
+
+header{
+    border: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px;
+}
+
+.menu-bar{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: var(--text);
+    justify-content: center;
+    background-color: var(--primary);
+}
+
+.menu-bar li{
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+}
