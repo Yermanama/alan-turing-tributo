@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@500&family=Martel:wght@600&display=swap');
+
 :root {
 --text: #f5f7f9;
 --background: #090c10;
 --primary: #001236;
 --secondary: #080a0d;
 --accent: #abb7ce;
+--fondo-contenido: #62929E;
+--font-titulos:font-family: 'Karla', sans-serif;
+--font-botones:font-family: 'Karla', sans-serif;
+--font-contenido: font-family: 'Martel', serif;
+/* CSS HEX */
+--silver: #c6c5b9ff;
+--blue-munsell: #62929eff;
+--oxford-blue: #001236ff;
+--paynes-gray: #4a6d7cff;
+--drab-dark-brown: #393a10ff;
 }
 
 body{
@@ -18,7 +30,7 @@ header{
     top: 0;
     left: 0;
     z-index: 1000;
-    height: 60px;
+    height: 48px;
 }
 
 .menu-bar{
@@ -32,7 +44,31 @@ header{
 }
 
 .menu-bar li{
+    font-family: var(--font-botones);
     display: inline-block;
-    margin: 10px;
+    margin: 5px 0px;
+    padding: 10px;
     cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-weight: bolder;
+}
+
+.menu-bar li:hover{
+    color: var(--background);
+    background-color: var(--accent);
+}
+
+main {
+    padding-top: 48px;
+    margin: 0px;
+    background-color: var(--fondo-contenido);
 }
