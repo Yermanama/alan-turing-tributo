@@ -1,40 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Karla:wght@500&family=Martel:wght@600&family=Sedgwick+Ave+Display&display=swap');
 
 :root {
---text: #f5f7f9;
---font-titulos:'Sedgwick Ave Display', cursive;
---font-botones: 'Karla', sans-serif;
---font-contenido: 'Caveat', cursive;
-/* CSS HEX */
---white-smoke: #F6F6F4;
---silver: #c6c5b9ff;
---blue-munsell: #62929eff;
---oxford-blue: #001236ff;
---paynes-gray: #4a6d7cff;
---drab-dark-brown: #393a10ff;
+    --text: #f5f7f9;
+    --font-titulos: 'Sedgwick Ave Display', cursive;
+    --font-botones: 'Karla', sans-serif;
+    --font-contenido: 'Caveat', cursive;
+    --white-smoke: #F6F6F4;
+    --silver: #c6c5b9ff;
+    --blue-munsell: #62929eff;
+    --oxford-blue: #001236ff;
+    --paynes-gray: #4a6d7cff;
+    --drab-dark-brown: #393a10ff;
 }
-
-body{
+*{
+    box-sizing: border-box;
+}
+body {
     background-color: var(--oxford-blue);
-    padding-top: 37px;
     margin: 0;
-    width: 80%;
+    padding-top: 37px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-header{
-    border: none;
+header {
     width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
     z-index: 1000;
     height: 48px;
 }
 
-.menu-bar{
+.menu-bar {
     display: flex;
     list-style-type: none;
     padding: 0;
@@ -44,118 +43,265 @@ header{
     background-color: var(--paynes-gray);
 }
 
-.menu-bar li{
+.menu-bar li {
     font-family: var(--font-botones);
     display: inline-block;
-    margin: 0px 10px;
+    margin: 0px 20px;
     padding: 10px;
     cursor: pointer;
     transition: all 0.25s ease-in-out;
+    border-radius: 10px;
+    font-weight: bolder;
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
     -ms-transition: all 0.25s ease-in-out;
     -o-transition: all 0.25s ease-in-out;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    font-weight: bolder;
 }
 
-.menu-bar li a{
+.menu-bar li a {
     text-decoration: none;
     font-family: var(--font-botones);
     color: var(--text);
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
+    transition: all 0.5s ease;
+    padding: 5px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
     border-radius: 5px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    padding: 5px;
-    text-transform: uppercase;
 }
 
-.menu-bar li a:hover{
-    transform: scale(2);
-    opacity: 1;
-    filter: blur();
-    color: var(--oxford-blue);
-    background-color: var(--white-smoke);
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -ms-transform: scale(2);
-    -o-transform: scale(2);
-    -webkit-filter: blur();
-}
-.menu-bar ul li a:before{
+.menu-bar li a::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
+    background: #ff497c;
+    color: var(--oxford-blue);
+    transition: transform 0.5s;
     transform-origin: right;
     transform: scaleX(0);
-    -webkit-transform: scaleX(0);
-    -moz-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-    -o-transform: scaleX(0);
     z-index: -1;
+    border-radius: 5px;
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+    -ms-transition: transform 0.5s;
+    -o-transition: transform 0.5s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
-.menu-bar ul li a:hover:before{
-    transition: transform 0.3s;
-    -webkit-transition: transform 0.3s;
-    -moz-transition: transform 0.3s;
-    -ms-transition: transform 0.3s;
-    -o-transition: transform 0.3s;
+
+.menu-bar li a:hover {
+    transform: scale(2);
+    color: var(--oxford-blue);
+    background-color: var(--white-smoke);
+    opacity: 1;
+}
+
+.menu-bar:hover li a {
+    transform: scale(1.5);
+    opacity: 0.2;
+}
+
+.menu-bar li a:hover::before {
     transform-origin: left;
     transform: scaleX(1);
-    -webkit-transform: scaleX(1);
-    -moz-transform: scaleX(1);
-    -ms-transform: scaleX(1);
-    -o-transform: scaleX(1);
 }
-main{
+
+main {
     color: var(--drab-dark-brown);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: 0px;
-    border: 0px;
+    padding: 10px 0;
+    margin: 0;
     background-color: var(--silver);
     font-weight: 600;
     font-family: var(--font-contenido);
-    max-width: 80%;
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
-.contenedor-imagen{
+.contenedor-imagen-nombre{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    width: 100%;
 }
-.imagen-principal{
-    width: 30%;
+.contenedor-imagen {
+    display: flex; /* Se añade para que los elementos se muestren en una sola linea*/
+    align-items: center; /* Se añade para que los elementos se alineen verticalmente*/
+    justify-content: center; /* Se añade para que los elementos se alineen horizontalmente*/
+    height: 35vh; /* Se añade para que el contenedor ocupe el 100% del alto de la pantalla*/
+    overflow: hidden; /* Se añade para que la imagen no se salga del contenedor*/
 }
-h1{
+
+.box{
+    width: 30vmin; /* Se añade para que el contenedor ocupe el 30% del ancho de la pantalla*/
+    height: 30vmin; /* Se añade para que el contenedor ocupe el 30% del alto de la pantalla*/
+}
+
+.box::before{
+    content: ''; /* Se añade para que el elemento tenga contenido*/
+    position: absolute; /* Se añade para que el elemento se posicione de forma absoluta*/
+    top: 0; /* Se añade para que el elemento se posicione en la parte superior*/
+    left: 0; /* Se añade para que el elemento se posicione en la parte izquierda*/
+    bottom: 0; /* Se añade para que el elemento se posicione en la parte inferior*/
+    right: 0; /* Se añade para que el elemento se posicione en la parte derecha*/
+    border-radius: 50%; /* Se añade para que el elemento tenga forma de circulo*/
+    transform: scale(1.42);
+}
+
+.spin-container{
+    width: 100%; /* Se añade para que el contenedor ocupe el 100% del ancho de la pantalla*/
+    height: 100%; /* Se añade para que el contenedor ocupe el 100% del alto de la pantalla*/
+    animation: spin 12s ease-in-out alternate infinite; /* Se añade la animacion de girar el contenedor*/
+    position: relative; /* Se añade para que el contenedor se posicione de forma relativa*/
+}
+
+.shape{
+    width: 100%; /* Se añade para que el contenedor ocupe el 100% del ancho de la pantalla*/
+    height: 100%;
+    transition: border-radius 1s ease-out; /* Se añade la transicion de la forma del contenedor*/
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; /* Se añade para que el contenedor tenga forma de rombo*/
+    animation: morph 8s ease-in-out infinite both alternate; /* Se añade la animacion de cambiar la forma del contenedor*/
+    position: absolute;
+    overflow: hidden; /* Se añade para que la imagen no se salga del contenedor*/
+    z-index: 5; /* Se añade para que el contenedor se muestre por encima de los demas elementos*/
+}
+
+.bd{
+    width: 142%; /* Se añade para que el contenedor ocupe el 142% del ancho de la pantalla*/
+    height: 142%; /* Se añade para que el contenedor ocupe el 142% del alto de la pantalla*/
+    position: absolute;
+    left: -21%; /* Se añade para que el contenedor se posicione en la parte izquierda*/
+    top: -21%; /* Se añade para que el contenedor se posicione en la parte superior*/
+    display: flex; /* Se añade para que los elementos se muestren en una sola linea*/
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: spin 12s ease-in-out infinite alternate-reverse;
+    z-index: 2;
+}
+
+.imagen-principal {
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+}
+
+@keyframes morph{
+    0% {
+        border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+    }
+    100% {
+        border-radius: 40% 60%;
+    }
+}
+
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+h1 {
     font-family: var(--font-titulos);
     font-size: 44px;
 }
-.contenedor-nombre{
-    width: 100%;
+
+.contenedor-nombre {
+    width: 80%;
     display: flex;
     justify-content: center;
     border-bottom: 3px solid var(--drab-dark-brown);
+}
+
+.contenedor-nombre h1{
+    text-align: center;
+    width: 0;
+    max-width: 15em;
+    overflow: hidden; /* Se añade para que el texto no sea revelado antes de la animacion*/
+    border-right: .15em solid var(--drab-dark-brown); /* Se añade un borde derecho al texto, que es el que va a hacer como de cursor */
+    white-space: nowrap; /* Se añade para que el texto se mantenga en una sola línea*/
+    margin: 10 auto; /* Se añade para que el texto se mantenga en el centro del contenedor*/
+    letter-spacing: .15em; /* Se añade para que el texto tenga un espaciado entre letras*/
+    animation:
+        typing 3.5s ease infinite, /* Se añade la animacion de escribir el texto*/
+        blink-caret .75s step-end infinite; /* Se añade la animacion del cursor*/
+    }
+
+/* Animacion de escribir el texto*/
+@keyframes typing{
+    from {width: 0} /* Se añade para que el texto empiece con un ancho de 0*/
+    to {width: 42%} /* Se añade para que el texto termine con un ancho de 100%*/
+}
+
+@keyframes blink-caret{
+    from, to {border-color: transparent} /* Se añade para que el cursor empiece y termine con un color transparente*/
+    50% {border-color: var(--drab-dark-brown)} /* Se añade para que el cursor tenga un color marron*/
+}
+.lista-eventos{
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.lista-eventos .event .description{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    -webkit-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    -moz-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    -ms-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    -o-transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    margin-left:10px;
+}
+
+.lista-eventos .event:hover .description{
+    max-height: 150px;
+    opacity: 1;
+}
+
+.lista-eventos .event .date{
+    padding: 5px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--oxford-blue);
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.lista-eventos .event:hover .date{
+    color: var(--white-smoke);
+    background-color: var(--oxford-blue);
+}
+
+.lista-eventos .event .date{
+    cursor: pointer;
 }
